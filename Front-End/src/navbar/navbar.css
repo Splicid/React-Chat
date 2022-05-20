@@ -1,0 +1,102 @@
+@font-face {
+    font-family: mainFont;
+    src: url('../Assets/Font-Styles/Roboto-Bold.ttf');
+    font-weight: bold;
+ }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: mainFont;
+    
+}
+.navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+.logo{
+    cursor: pointer;
+    margin-right: auto;
+    height: 10%;
+    width: 10%;
+}
+a{
+    border: none;
+    border-radius: 30px;
+    color: #05386B;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+}
+li, a{
+    font-size: clamp(1.5rem, 2.0vw, 2.5rem);
+    text-decoration: none;
+}
+.nav-menu{
+    list-style: none;
+}
+.nav-menu li{
+    display: inline-block;
+    padding: 0px 25px;
+}
+.nav-menu li a{
+    transition: all 0.3s ease 0s;
+}
+.nav-menu li a:hover{
+    color: red;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+@media(max-width:768px){
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        border: solid black 1px;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    .nav-menu.active{
+        left: 0;
+    }
+}

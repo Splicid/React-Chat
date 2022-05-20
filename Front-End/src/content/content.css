@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.content{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 600px) {
+    .content{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (min-width: 601px) {
+    .content{
+        font-size: 2.5rem;
+    }
+}
